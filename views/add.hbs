@@ -1,0 +1,24 @@
+<div class="phone-list readonly-list">
+  {{#each records}}
+    {{> phone-row disabled=true}}
+  {{else}}
+    <p class="empty">В справочнике пока нет записей.</p>
+  {{/each}}
+</div>
+
+<form class="editor-form" method="post" action="/Add">
+  <label>
+    ФИО
+    <input name="name" type="text" maxlength="80" placeholder="Например: Сергей Орлов" required>
+  </label>
+
+  <label>
+    Телефон
+    <input name="phone" type="tel" maxlength="30" placeholder="Например: +375291234567" required>
+  </label>
+
+  <div class="actions">
+    <button class="button" type="submit">Добавить</button>
+    {{{cancelButton}}}
+  </div>
+</form>

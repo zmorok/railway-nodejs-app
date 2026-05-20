@@ -1,0 +1,11 @@
+<div class="toolbar">
+  <a class="button" href="/Add">Добавить</a>
+</div>
+
+<div class="phone-list">
+  {{#each records}}
+    {{> phone-row disabled=false}}
+  {{else}}
+    <p class="empty">В справочнике пока нет записей.</p>
+  {{/each}}
+</div>

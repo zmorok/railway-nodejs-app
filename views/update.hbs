@@ -1,0 +1,33 @@
+<div class="phone-list readonly-list">
+  {{#each records}}
+    {{> phone-row disabled=true}}
+  {{else}}
+    <p class="empty">В справочнике пока нет записей.</p>
+  {{/each}}
+</div>
+
+<form class="editor-form" method="post" action="/Update" id="updateForm">
+  <input type="hidden" name="id" value="{{record.id}}">
+
+  <label>
+    ФИО
+    <input class="editable-field" name="name" type="text" maxlength="80" value="{{record.name}}" required>
+  </label>
+
+  <label>
+    Телефон
+    <input class="editable-field" name="phone" type="tel" maxlength="30" value="{{record.phone}}" required>
+  </label>
+
+  <div class="actions">
+    <button class="button" type="submit">Изменить</button>
+  </div>
+</form>
+
+<div class="actions separated-actions">
+  <form method="post" action="/Delete">
+    <input type="hidden" name="id" value="{{record.id}}">
+    <button class="button button-danger" id="deleteButton" type="submit">Удалить</button>
+  </form>
+  {{{cancelButton}}}
+</div>

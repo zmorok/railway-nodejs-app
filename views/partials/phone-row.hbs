@@ -1,0 +1,8 @@
+<a
+  class="phone-row {{#if disabled}}phone-row-disabled{{/if}}"
+  {{#unless disabled}}href="/Update?id={{id}}"{{/unless}}
+  {{#if disabled}}aria-disabled="true" tabindex="-1"{{/if}}
+>
+  <span class="phone-name">{{name}}</span>
+  <span class="phone-number">{{phone}}</span>
+</a>
