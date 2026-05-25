@@ -4,13 +4,11 @@
 	"description": "Лабораторная работа 20: Express + Handlebars телефонный справочник",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js",
-		"dev": "node server.js"
+		"start": "node server.js"
 	},
 	"dependencies": {
 		"express": "^4.19.2",
 		"express-handlebars": "^7.1.3",
 		"handlebars": "^4.7.8"
-	},
-	"license": "MIT"
+	}
 }

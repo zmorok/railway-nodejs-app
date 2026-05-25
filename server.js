@@ -6,7 +6,9 @@ const path = require('path')
 
 const app = express()
 const PORT = process.env.PORT || 3000
-const DATA_FILE = path.join(__dirname, 'data.json')
+const DATA_FILE = process.env.VERCEL
+	? path.join('/tmp', 'data.json')
+	: path.join(__dirname, 'data.json')
 const INITIAL_RECORDS = [
 	{ id: '1', name: 'Иван Иванов', phone: '+375291111111' },
 	{ id: '2', name: 'Пётр Петров', phone: '+375292222222' },
